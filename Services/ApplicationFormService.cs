@@ -43,7 +43,7 @@ namespace ApplicationFormManager.Services
 
             applicationForm.Title = requestDto.Title;
             applicationForm.Description = requestDto.Description;
-            applicationForm.CustomQuestionFields = requestDto.CustomQuestionFields;
+            applicationForm.CustomQuestionFields = requestDto.CustomQuestions;
 
             await _dbContext.SaveChangesAsync();
 

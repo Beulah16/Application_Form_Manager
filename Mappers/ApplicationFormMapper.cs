@@ -11,8 +11,8 @@ namespace ApplicationFormManager.Mappers
             {
                 Title = request.Title,
                 Description = request.Description,
-                PersonalInputFields = request.PersonalInputFields,
-                CustomQuestionFields = request.CustomQuestionFields,
+                PersonalInputFields = request.PersonalInfos,
+                CustomQuestionFields = request.CustomQuestions,
             };
         }
     }

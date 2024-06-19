@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ApplicationFormManager.Models
+namespace ApplicationFormManager.Helpers
 {
     public class CustomQuestion
     {
@@ -8,13 +8,16 @@ namespace ApplicationFormManager.Models
         public string QuestionType { get; set; } = string.Empty;
         [Required]
         public string QuestionText { get; set; } = string.Empty;
-        public List<string>? Choices { get; set; }
+        public List<string?> Choices { get; set; } = [];
     }
 
     public enum QuestionType
     {
-        MultipleChoice,
-        TrueFalse,
-        OpenEnded
+        Paragraph, 
+        YesNo, 
+        Dropdown, 
+        MultipleChoice, 
+        Date, 
+        Number
     }
 }
