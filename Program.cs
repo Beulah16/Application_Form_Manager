@@ -1,4 +1,6 @@
 using ApplicationFormManager.Data;
+using ApplicationFormManager.Interfaces;
+using ApplicationFormManager.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +17,8 @@ var connectionString = builder.Configuration.GetConnectionString("CosmosDb")
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseCosmos(connectionString, "ApplicationFormDb"));
 
-
+builder.Services.AddScoped<IApplicationFormService, ApplicationFormService>();
+builder.Services.AddScoped<ISubmissionService, SubmissionService>();
 
 builder.Services.AddControllers();
 

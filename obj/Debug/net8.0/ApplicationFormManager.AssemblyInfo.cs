@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApplicationFormManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+666734c551e791054cfaae08fb89d65a13e6a9ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c6eeff56683933c7754139135cf9505ec830196")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApplicationFormManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApplicationFormManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
