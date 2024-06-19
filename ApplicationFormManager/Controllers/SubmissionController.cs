@@ -41,56 +41,5 @@ namespace ApplicationFormManager.ApplicationFormManager.Controllers
 
             return CreatedAtAction("GetById", new { id = applicationSubmission.Id }, applicationSubmission);
         }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, Submission applicationSubmission)
-        {
-            if (id != applicationSubmission.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(applicationSubmission).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ApplicationSubmissionExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
-        {
-            var applicationSubmission = await _context.Submissions.FindAsync(id);
-            if (applicationSubmission == null)
-            {
-                return NotFound();
-            }
-
-            _context.Submissions.Remove(applicationSubmission);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool ApplicationSubmissionExists(Guid id)
-        {
-            return _context.Submissions.Any(e => e.Id == id);
-        }
     }
 }

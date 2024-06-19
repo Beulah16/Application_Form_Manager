@@ -19,7 +19,7 @@ namespace ApplicationFormManager.ApplicationFormManager.Data
                 .HasNoDiscriminator();
 
             modelBuilder.Entity<Submission>()
-                .ToContainer("ApplicationSubmissions")
+                .ToContainer("Submissions")
                 .HasPartitionKey(x => x.Id)
                 .HasNoDiscriminator();
 

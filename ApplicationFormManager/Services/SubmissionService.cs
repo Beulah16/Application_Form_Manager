@@ -39,14 +39,5 @@ namespace ApplicationFormManager.ApplicationFormManager.Services
 
             return submission;
         }
-
-        public Task<Submission?> UpdateSubmission(Guid Id, CreateSubmissionRequest requestDto)
-        {
-            throw new NotImplementedException();
-        }
-        public Task<Submission?> DeleteSubmission(Guid Id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

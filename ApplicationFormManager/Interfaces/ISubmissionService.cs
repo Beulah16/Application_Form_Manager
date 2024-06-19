@@ -8,7 +8,5 @@ namespace ApplicationFormManager.ApplicationFormManager.Interfaces
         Task<List<Submission>> GetSubmissions();
         Task<Submission?> GetSubmissionById(Guid Id);
         Task<Submission?> PostSubmission(CreateSubmissionRequest requestDto);
-        Task<Submission?> UpdateSubmission(Guid Id, CreateSubmissionRequest requestDto);
-        Task<Submission?> DeleteSubmission(Guid Id);
     }
 }
