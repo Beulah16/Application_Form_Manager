@@ -12,12 +12,12 @@ using Moq;
 namespace ApplicationFormManager.Tests
 {
 
-    public class ApplicationFormServiceIntegrationTests : IDisposable
+    public class ApplicationFormServiceTests : IDisposable
     {
         private readonly IApplicationFormService _service;
         private readonly AppDbContext _dbContext;
 
-        public ApplicationFormServiceIntegrationTests()
+        public ApplicationFormServiceTests()
         {
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
