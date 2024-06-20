@@ -10,12 +10,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("CosmosDb")
-    ?? throw new InvalidOperationException("Connection string 'CosmosDb' not found.");
+var configuration = builder.Configuration;
 
-
+// Configure Cosmos DB context
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseCosmos(connectionString, "ApplicationFormDb"));
+    options.UseCosmos(
+        configuration["CosmosConnectionStrings:Url"],
+        configuration["CosmosConnectionStrings:Key"],
+        configuration["CosmosConnectionStrings:TestDB"]
+    ));
 
 builder.Services.AddScoped<IApplicationFormService, ApplicationFormService>();
 builder.Services.AddScoped<ISubmissionService, SubmissionService>();
