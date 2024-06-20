@@ -136,7 +136,7 @@ namespace ApplicationFormManager.Tests
                 Title = "Updated Title",
                 Description = "Updated Description",
                 CustomQuestionFields = [
-            new CustomQuestion { QuestionType = "TrueFalse", QuestionText = "Updated Question", Choices = null }
+            new CustomQuestion { QuestionType = "YesNo", QuestionText = "Updated Question", Choices = null }
             ]
             };
 
@@ -151,7 +151,7 @@ namespace ApplicationFormManager.Tests
             Assert.Single(result.CustomQuestionFields); // Ensure only one question remains after update
 
             var updatedQuestion = result.CustomQuestionFields.First();
-            Assert.Equal("TrueFalse", updatedQuestion.QuestionType);
+            Assert.Equal("YesNo", updatedQuestion.QuestionType);
             Assert.Equal("Updated Question", updatedQuestion.QuestionText);
 
             // Retrieve from database to verify
@@ -160,7 +160,7 @@ namespace ApplicationFormManager.Tests
             Assert.Equal("Updated Title", updatedForm.Title);
             Assert.Equal("Updated Description", updatedForm.Description);
             Assert.Single(updatedForm.CustomQuestionFields);
-            Assert.Equal("TrueFalse", updatedForm.CustomQuestionFields.First().QuestionType);
+            Assert.Equal("YesNo", updatedForm.CustomQuestionFields.First().QuestionType);
         }
 
         [Fact]
@@ -173,7 +173,7 @@ namespace ApplicationFormManager.Tests
                 Title = "Updated Title",
                 Description = "Updated Description",
                 CustomQuestionFields = [
-                new CustomQuestion { QuestionType = "TrueFalse", QuestionText = "Updated Question", Choices = null }
+                new CustomQuestion { QuestionType = "YesNo", QuestionText = "Updated Question", Choices = null }
             ]
             };
 
